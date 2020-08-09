@@ -50,6 +50,7 @@ namespace WishListTests
             // Get appropriate path to file for the current operating system
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "WishList" + Path.DirectorySeparatorChar + "Controllers" + Path.DirectorySeparatorChar + "HomeController.cs";
             // Assert Index.cshtml is in the Views/Home folder
+            //Assert.True(false, filePath);
             Assert.True(File.Exists(filePath), "`HomeController.cs` was not found in the `Controllers` folder.");
 
             var controllerType = TestHelpers.GetUserType("WishList.Controllers.HomeController");
