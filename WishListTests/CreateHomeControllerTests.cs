@@ -41,6 +41,7 @@ namespace WishListTests
             Assert.True(method.ReturnType == typeof(IActionResult), "`HomeController.Index` was found, but did not have a return type of `IActionResult`.");
 
             var result = (ViewResult)method.Invoke(controller, null);
+            Assert.True(true, "Test Message");
             Assert.True(result.ViewName == "Index", "`HomeController.Index` did not explicitly return the `Index` view.");
         }
 
