@@ -41,7 +41,6 @@ namespace WishListTests
             Assert.True(method.ReturnType == typeof(IActionResult), "`HomeController.Index` was found, but did not have a return type of `IActionResult`.");
 
             var result = (ViewResult)method.Invoke(controller, null);
-            Assert.True(true, "Test Message");
             Assert.True(result.ViewName == "Index", "`HomeController.Index` did not explicitly return the `Index` view.");
         }
 
@@ -51,7 +50,6 @@ namespace WishListTests
             // Get appropriate path to file for the current operating system
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "WishList" + Path.DirectorySeparatorChar + "Controllers" + Path.DirectorySeparatorChar + "HomeController.cs";
             // Assert Index.cshtml is in the Views/Home folder
-            //Assert.True(false, filePath);
             Assert.True(File.Exists(filePath), "`HomeController.cs` was not found in the `Controllers` folder.");
 
             var controllerType = TestHelpers.GetUserType("WishList.Controllers.HomeController");
